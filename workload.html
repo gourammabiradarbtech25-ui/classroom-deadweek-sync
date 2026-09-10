@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>This Week's Plan | Classroom Deadweek Sync</title>
+
+    <link rel="stylesheet" href="workload.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================================
+         HEADER
+         ================================================= -->
+
+    <header>
+
+        <div class="logo">
+
+            <h1>
+                Classroom Deadweek Sync
+            </h1>
+
+        </div>
+
+
+        <nav>
+            <a href="dashboard.html">
+                Dashboard
+            </a>
+
+            <a href="calendar.html">
+                Calendar
+            </a>
+
+            <a href="deadweek.html">
+                Deadweek
+            </a>
+
+            <a href="workload.html">Workload</a>
+
+            <a href="stuck.html">
+               I'm Stuck
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =================================================
+         MAIN
+         ================================================= -->
+
+    <main>
+
+
+        <!-- =================================================
+             HERO
+             ================================================= -->
+
+        <section class="workload-hero">
+
+            <div class="hero-label">
+
+                <span>
+                    ✦
+                </span>
+
+                <p>
+                    WORKLOAD PLANNER
+                </p>
+
+            </div>
+
+
+            <h2>
+                Plan what to do
+                <span>before it's due.</span>
+            </h2>
+
+
+            <p>
+                Your Classroom assignments, organized by what needs attention first.
+            </p>
+
+
+            <button
+                type="button"
+                id="generatePlan">
+
+                ✦ Build My Plan
+
+            </button>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PLAN STATUS
+             ================================================= -->
+
+        <section class="plan-status">
+
+
+            <div>
+
+                <p>
+                    PLAN STATUS
+                </p>
+
+
+                <h2 id="planStatus">
+
+                    Waiting for Classroom data
+
+                </h2>
+
+
+                <span id="lastUpdated">
+                    Your pending tasks are ready to be organized.
+                </span>
+
+            </div>
+
+
+            <div class="plan-score">
+
+                <strong id="planScore">
+                    Not generated
+                </strong>
+
+                <p>
+                    PLAN SCORE
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             TODAY'S FOCUS
+             ================================================= -->
+
+        <section class="today-focus">
+
+
+            <div class="focus-number">
+
+                <span>
+                    01
+                </span>
+
+            </div>
+
+
+            <div class="focus-content">
+
+                <p>
+                    TODAY'S FOCUS
+                </p>
+
+
+                <h2 id="todayTask">
+
+                    Your next important task
+                    will appear here.
+
+                </h2>
+
+
+                <p id="todayDescription">
+
+                    Connect Google Classroom and
+                    generate your smart workload plan
+                    to see what you should focus on today.
+
+                </p>
+
+            </div>
+
+
+            <div class="focus-action">
+
+                <button
+                    type="button"
+                    id="markComplete">
+
+                    Mark Complete
+
+                </button>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             SMART PLAN TIMELINE
+             ================================================= -->
+
+        <section class="smart-timeline">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p>
+                        YOUR ROADMAP
+                    </p>
+
+
+                    <h2>
+                        Smart Workload Timeline
+                    </h2>
+
+                </div>
+
+
+                <span id="timelineRange">
+
+                    No plan generated
+
+                </span>
+
+            </div>
+
+
+
+            <div
+                class="timeline"
+                id="workloadTimeline">
+
+
+                <!--
+
+                    JavaScript will generate
+                    the workload timeline here.
+
+                    Example structure:
+
+                    TODAY
+                    ↓
+                    Start Assignment
+                    ↓
+                    Continue Project
+                    ↓
+                    Review Exam
+                    ↓
+                    DEADLINE
+
+                -->
+
+
+                <div class="empty-timeline">
+
+                    <div class="timeline-icon">
+                        ✦
+                    </div>
+
+
+                    <h3>
+                        Your roadmap is waiting
+                    </h3>
+
+
+                    <p>
+
+                        Generate your smart plan to
+                        see your assignments arranged
+                        in the order you should work on them.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PRIORITY MATRIX
+             ================================================= -->
+
+        <section class="priority-section">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p>
+                        PRIORITY CHECK
+                    </p>
+
+
+                    <h2>
+                        What Needs Attention?
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="priority-grid">
+
+
+                <!-- URGENT -->
+
+                <div class="priority-card urgent">
+
+                    <div class="priority-top">
+
+                        <span>
+                            🔴
+                        </span>
+
+                        <p>
+                            DO FIRST
+                        </p>
+
+                    </div>
+
+
+                    <h3>
+                        Urgent
+                    </h3>
+
+
+                    <strong id="urgentCount">
+                        0
+                    </strong>
+
+
+                    <p>
+                        Deadlines approaching soon.
+                    </p>
+
+
+                    <div
+                        id="urgentTasks">
+
+                        No urgent tasks.
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- IMPORTANT -->
+
+                <div class="priority-card important">
+
+                    <div class="priority-top">
+
+                        <span>
+                            🟡
+                        </span>
+
+                        <p>
+                            PLAN AHEAD
+                        </p>
+
+                    </div>
+
+
+                    <h3>
+                        Important
+                    </h3>
+
+
+                    <strong id="importantCount">
+                        0
+                    </strong>
+
+
+                    <p>
+                        Start these before they become urgent.
+                    </p>
+
+
+                    <div
+                        id="importantTasks">
+
+                        No important tasks.
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- LOW -->
+
+                <div class="priority-card relaxed">
+
+                    <div class="priority-top">
+
+                        <span>
+                            🟢
+                        </span>
+
+                        <p>
+                            YOU HAVE TIME
+                        </p>
+
+                    </div>
+
+
+                    <h3>
+                        Later
+                    </h3>
+
+
+                    <strong id="laterCount">
+                        0
+                    </strong>
+
+
+                    <p>
+                        Tasks with more breathing room.
+                    </p>
+
+
+                    <div
+                        id="laterTasks">
+
+                        No later tasks.
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             COURSE WORKLOAD
+             ================================================= -->
+
+        <section class="course-workload">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p>
+                        COURSE BALANCE
+                    </p>
+
+
+                    <h2>
+                        Where Your Time Is Going
+                    </h2>
+
+                </div>
+
+
+                <span id="courseWorkloadStatus">
+
+                    Waiting for data
+
+                </span>
+
+            </div>
+
+
+
+            <div
+                class="course-workload-list"
+                id="courseWorkloadList">
+
+
+                <!--
+
+                    Google Classroom courses
+                    will appear here dynamically.
+
+                -->
+
+
+                <div class="empty-course-workload">
+
+                    <span>
+                        ◌
+                    </span>
+
+
+                    <h3>
+                        No course workload yet
+                    </h3>
+
+
+                    <p>
+
+                        Your connected Classroom courses
+                        will appear here with their workload
+                        distribution.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             TIME RECOMMENDATION
+             ================================================= -->
+
+        <section class="time-recommendation">
+
+
+            <div class="recommendation-symbol">
+                ⏱
+            </div>
+
+
+            <div class="recommendation-content">
+
+                <p>
+                    TIME RECOMMENDATION
+                </p>
+
+
+                <h2 id="recommendedHours">
+
+                    No study schedule generated yet.
+
+                </h2>
+
+
+                <p id="timeAdvice">
+
+                    Your workload will be analyzed to
+                    suggest how much time you should
+                    spend on each task.
+
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             DAILY PLAN
+             ================================================= -->
+
+        <section class="daily-plan">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p>
+                        DAY BY DAY
+                    </p>
+
+
+                    <h2>
+                        Your Study Mission
+                    </h2>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="previousDay">
+
+                    ←
+
+                </button>
+
+
+                <button
+                    type="button"
+                    id="nextDay">
+
+                    →
+
+                </button>
+
+            </div>
+
+
+
+            <div
+                class="daily-plan-content"
+                id="dailyPlan">
+
+
+                <!--
+
+                    Daily tasks will be
+                    generated dynamically.
+
+                -->
+
+
+                <div class="empty-daily-plan">
+
+                    <div>
+                        📅
+                    </div>
+
+
+                    <h3>
+                        No daily mission yet
+                    </h3>
+
+
+                    <p>
+
+                        Generate your plan and your
+                        workload will be divided into
+                        manageable daily tasks.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             MOTIVATION / SMART MESSAGE
+             ================================================= -->
+
+        <section class="smart-message">
+
+
+            <div class="message-decoration">
+                ✦
+            </div>
+
+
+            <p>
+                YOUR PLAN, YOUR PACE
+            </p>
+
+
+            <h2 id="smartMessage">
+
+                A clear plan turns
+                a stressful week into
+                manageable steps.
+
+            </h2>
+
+
+            <span>
+
+                Classroom Deadweek Sync
+
+            </span>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PEER SUPPORT
+             ================================================= -->
+
+        <section class="peer-support">
+
+
+            <div>
+
+                <p>
+                    STUCK ON SOMETHING?
+                </p>
+
+
+                <h2>
+                    You're probably not the only one.
+                </h2>
+
+
+                <p>
+
+                    Check whether your classmates are
+                    struggling with the same assignment.
+
+                </p>
+
+            </div>
+
+
+            <a href="dashboard.html">
+
+                Check Assignment Activity →
+
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =================================================
+         FOOTER
+         ================================================= -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Classroom Deadweek Sync
+        </p>
+
+
+        <p>
+            Plan earlier. Work smarter. Stress less.
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

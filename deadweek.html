@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deadweek Detector | Classroom Deadweek Sync</title>
+    <link rel="stylesheet" href="deadweek.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Classroom Deadweek Sync</h1>
+        </div>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="calendar.html">Calendar</a>
+            <a href="deadweek.html">Deadweek</a>
+            <a href="workload.html">Workload</a>
+            <a href="stuck.html">I'm Stuck</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="deadweek-intro">
+            <p class="small-title">WEEKLY WORKLOAD</p>
+            <h2>Deadweek Detector</h2>
+            <p>Your workload, analyzed from your connected Google Classroom courses.</p>
+        </section>
+
+        <section class="classroom-status">
+            <div>
+                <p>GOOGLE CLASSROOM</p>
+                <h2>Connected Courses</h2>
+                <span id="classroomConnectionStatus">Waiting for Google Classroom data...</span>
+            </div>
+            <div>
+                <!-- FIXED ID: deadweekCourseCount -->
+                <span id="deadweekCourseCount">0 Courses</span>
+            </div>
+        </section>
+
+        <section class="deadweek-status">
+            <div class="status-heading">
+                <div>
+                    <p>CURRENT WORKLOAD</p>
+                    <h2>How Packed Is Your Week?</h2>
+                </div>
+                <span id="statusBadge">ANALYZING</span>
+            </div>
+
+            <div class="pressure-area">
+                <div class="pressure-score">
+                    <span id="pressureScore">0</span>
+                    <p>DEADLINES</p>
+                </div>
+                <div class="pressure-message">
+                    <h3 id="pressureTitle">Waiting for your classroom data</h3>
+                    <p id="pressureDescription">Once your Google Classroom courses and assignments are available, this page will analyze your workload.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="connected-courses">
+            <div class="section-header">
+                <div>
+                    <p>YOUR CLASSROOM</p>
+                    <h2>Course Workload</h2>
+                </div>
+            </div>
+
+            <!-- FIXED ID: deadweekCourseList -->
+            <div class="course-list" id="deadweekCourseList">
+                <div class="empty-course-state">
+                    <span>📚</span>
+                    <h3>No Classroom Data Yet</h3>
+                    <p>Connect Google Classroom from the Home page to see your courses and deadlines here.</p>
+                    <a href="index.html">Connect Google Classroom →</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="deadweek-detection">
+            <div class="section-header">
+                <div>
+                    <p>WEEKLY ANALYSIS</p>
+                    <h2>Deadweek Radar</h2>
+                </div>
+                <button type="button" id="scanWorkload">Scan My Calendar</button>
+            </div>
+
+            <div class="week-list" id="weekList">
+                <div class="empty-week-state">
+                    <p>Your weekly workload will appear here after your Classroom data is loaded.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="deadweek-warning">
+            <div class="warning-icon">⚠</div>
+            <div class="warning-content">
+                <p>WORKLOAD ALERT</p>
+                <h2 id="warningTitle">No Deadweek Detected</h2>
+                <p id="warningMessage">Connect your Google Classroom to automatically detect weeks where multiple deadlines are clustered.</p>
+            </div>
+            <div class="warning-action">
+                <a href="workload.html">Create My Plan →</a>
+            </div>
+        </section>
+
+        <section class="deadline-breakdown">
+            <div class="section-header">
+                <div>
+                    <p>DEADLINE ANALYSIS</p>
+                    <h2>Your Deadline Breakdown</h2>
+                </div>
+            </div>
+            <div class="breakdown-grid">
+                <div class="breakdown-card">
+                    <span>📘</span>
+                    <!-- FIXED ID: deadweekAssignmentCount -->
+                    <strong id="deadweekAssignmentCount">0</strong>
+                    <p>Assignments</p>
+                </div>
+                <div class="breakdown-card">
+                    <span>🧪</span>
+                    <strong id="examCount">0</strong>
+                    <p>Exams</p>
+                </div>
+                <div class="breakdown-card">
+                    <span>🚀</span>
+                    <strong id="projectCount">0</strong>
+                    <p>Projects</p>
+                </div>
+                <div class="breakdown-card">
+                    <span>📚</span>
+                    <strong id="courseTotal">0</strong>
+                    <p>Courses</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="smart-recommendation">
+            <div class="recommendation-label">
+                <span>✦</span>
+                <p>SMART RECOMMENDATION</p>
+            </div>
+            <h2 id="recommendationTitle">Waiting for your workload...</h2>
+            <p id="smartAdvice">After your Google Classroom courses and deadlines are loaded, the system will suggest when you should start preparing for important work.</p>
+            <a href="workload.html">View This Week's Plan →</a>
+        </section>
+
+        <section class="peer-deadweek">
+            <div class="section-header">
+                <div>
+                    <p>STUDENT NETWORK</p>
+                    <h2>Classmates Facing The Same Deadline</h2>
+                </div>
+            </div>
+            <div class="peer-status" id="peerDeadweekStatus">
+                <div class="peer-number">
+                    <span id="peerCount">0</span>
+                </div>
+                <div>
+                    <h3>Students reported difficulty</h3>
+                    <p>When students flag an assignment as "I'm Stuck", you'll be able to see how many classmates are facing the same problem.</p>
+                </div>
+            </div>
+            <a href="#">View Peer Activity →</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Classroom Deadweek Sync</p>
+        <p>Detect early. Prepare smart. Stress less.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

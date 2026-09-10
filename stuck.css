@@ -1,0 +1,1311 @@
+/* =====================================================
+   CLASSROOM DEADWEEK SYNC
+   I'M STUCK — PEER SUPPORT
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #f5f7ff;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 8% 12%,
+            rgba(108, 99, 255, 0.16),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 92% 35%,
+            rgba(0, 220, 255, 0.10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(255, 86, 157, 0.07),
+            transparent 30%
+        ),
+        #080c19;
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+header {
+    min-height: 75px;
+
+    padding: 0 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+
+    background:
+        rgba(7, 11, 24, 0.88);
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(18px);
+}
+
+
+/* =====================================================
+   LOGO
+   ===================================================== */
+
+.logo h1 {
+    font-size: 21px;
+
+    letter-spacing: 0.3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #aaa5ff,
+            #00d9ff
+        );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =====================================================
+   NAVIGATION
+   ===================================================== */
+
+nav {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #969db8;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    padding: 9px 12px;
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: white;
+
+    background:
+        rgba(108, 99, 255, 0.13);
+}
+
+
+/* Active page */
+
+nav a[href="stuck.html"] {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff5796,
+            #8b5cff
+        );
+
+    box-shadow:
+        0 0 25px
+        rgba(255, 87, 150, 0.20);
+}
+
+
+/* =====================================================
+   MAIN
+   ===================================================== */
+
+main {
+    width: 90%;
+
+    max-width: 1250px;
+
+    margin: 50px auto 80px;
+}
+
+
+/* =====================================================
+   HERO
+   ===================================================== */
+
+.stuck-hero {
+    min-height: 330px;
+
+    padding: 50px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+
+    border-radius: 28px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(255, 87, 150, 0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 20% 90%,
+            rgba(108, 99, 255, 0.14),
+            transparent 35%
+        ),
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.09);
+
+    backdrop-filter: blur(15px);
+}
+
+
+/* Decorative circles */
+
+.stuck-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    right: -100px;
+    top: -120px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(255, 87, 150, 0.18);
+
+    box-shadow:
+        0 0 80px
+        rgba(255, 87, 150, 0.08);
+}
+
+.stuck-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    right: 100px;
+    bottom: -90px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(108, 99, 255, 0.18);
+}
+
+
+/* =====================================================
+   HERO SYMBOL
+   ===================================================== */
+
+.hero-symbol {
+    width: 105px;
+    height: 105px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 32px;
+
+    font-size: 45px;
+    font-weight: bold;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 87, 150, 0.22),
+            rgba(108, 99, 255, 0.22)
+        );
+
+    border:
+        1px solid rgba(255, 255, 255, 0.13);
+
+    box-shadow:
+        0 0 45px
+        rgba(255, 87, 150, 0.13);
+
+    transform: rotate(-4deg);
+
+    transition: 0.4s;
+}
+
+.stuck-hero:hover .hero-symbol {
+    transform:
+        rotate(0deg)
+        scale(1.05);
+}
+
+
+/* =====================================================
+   HERO TEXT
+   ===================================================== */
+
+.stuck-hero > div:last-child {
+    position: relative;
+
+    z-index: 2;
+}
+
+.stuck-hero > div:last-child > p:first-child {
+    color: #ff70a8;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 13px;
+}
+
+.stuck-hero h2 {
+    font-size: 46px;
+
+    line-height: 1.1;
+
+    margin-bottom: 15px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #ff9ac1,
+            #aaa5ff
+        );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stuck-hero > div:last-child > p:last-child {
+    max-width: 650px;
+
+    color: #9299b4;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   STATUS CARDS
+   ===================================================== */
+
+.stuck-status {
+    margin-top: 25px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 14px;
+}
+
+.status-box {
+    padding: 22px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    transition: 0.3s;
+}
+
+.status-box:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(255, 87, 150, 0.20);
+
+    background:
+        rgba(255, 255, 255, 0.05);
+}
+
+.status-box > span {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    font-size: 18px;
+
+    background:
+        rgba(255, 87, 150, 0.07);
+
+    border:
+        1px solid rgba(255, 87, 150, 0.12);
+}
+
+.status-box strong {
+    display: block;
+
+    font-size: 22px;
+
+    margin-bottom: 4px;
+}
+
+.status-box p {
+    color: #747c96;
+
+    font-size: 10px;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =====================================================
+   COMMON SECTIONS
+   ===================================================== */
+
+.assignment-selector,
+.peer-activity,
+.discussion-section {
+    margin-top: 27px;
+
+    padding: 30px;
+
+    border-radius: 22px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(12px);
+}
+
+.section-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.section-heading p {
+    color: #ff70a8;
+
+    font-size: 9px;
+
+    letter-spacing: 2.5px;
+
+    margin-bottom: 7px;
+}
+
+.section-heading h2 {
+    font-size: 23px;
+}
+
+.section-heading > span {
+    color: #747d98;
+
+    font-size: 10px;
+
+    padding: 8px 13px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+}
+
+
+/* =====================================================
+   ASSIGNMENT AREA
+   ===================================================== */
+
+.assignment-list {
+    margin-top: 25px;
+}
+
+.empty-assignment {
+    padding: 45px 25px;
+
+    text-align: center;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 87, 150, 0.035),
+            rgba(108, 99, 255, 0.035)
+        );
+
+    border:
+        1px dashed rgba(255, 87, 150, 0.20);
+}
+
+.empty-assignment > div {
+    font-size: 35px;
+
+    color: #ff70a8;
+
+    margin-bottom: 12px;
+}
+
+.empty-assignment h3 {
+    font-size: 17px;
+
+    margin-bottom: 8px;
+}
+
+.empty-assignment p {
+    max-width: 550px;
+
+    margin: auto;
+
+    color: #7f879f;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+.empty-assignment a {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 11px 17px;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff5796,
+            #8b5cff
+        );
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.empty-assignment a:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(255, 87, 150, 0.20);
+}
+
+
+/* =====================================================
+   DYNAMIC ASSIGNMENT CARDS
+   ===================================================== */
+
+.assignment-card {
+    padding: 20px;
+
+    margin-top: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-radius: 16px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    transition: 0.3s;
+}
+
+.assignment-card:hover {
+    transform: translateX(5px);
+
+    border-color:
+        rgba(255, 87, 150, 0.25);
+}
+
+.assignment-card.selected {
+    border-color: rgba(255, 87, 150, 0.5);
+
+    background: rgba(255, 87, 150, 0.06);
+}
+
+.assignment-card h3 {
+    font-size: 14px;
+
+    margin-bottom: 5px;
+}
+
+.assignment-card p {
+    color: #7f879f;
+
+    font-size: 10px;
+}
+
+.assignment-card button {
+    padding: 10px 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff5796,
+            #8b5cff
+        );
+
+    cursor: pointer;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   I'M STUCK ACTION
+   ===================================================== */
+
+.stuck-action {
+    margin-top: 27px;
+
+    padding: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 87, 150, 0.08),
+            rgba(108, 99, 255, 0.07)
+        );
+
+    border:
+        1px solid rgba(255, 87, 150, 0.15);
+}
+
+.action-icon {
+    width: 62px;
+    height: 62px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    color: #ff78aa;
+
+    font-size: 27px;
+    font-weight: bold;
+
+    background:
+        rgba(255, 87, 150, 0.08);
+
+    border:
+        1px solid rgba(255, 87, 150, 0.16);
+}
+
+.action-content {
+    flex: 1;
+}
+
+.action-content > p:first-child {
+    color: #ff70a8;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 6px;
+}
+
+.action-content h2 {
+    font-size: 19px;
+
+    margin-bottom: 7px;
+}
+
+.action-content > p:last-child {
+    color: #858ca4;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+#markStuck {
+    padding: 13px 21px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff5796,
+            #8b5cff
+        );
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition: 0.3s;
+}
+
+#markStuck:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(255, 87, 150, 0.25);
+}
+
+
+/* =====================================================
+   PEER ACTIVITY
+   ===================================================== */
+
+.peer-list {
+    margin-top: 25px;
+}
+
+.empty-peer {
+    padding: 42px 25px;
+
+    text-align: center;
+
+    border-radius: 17px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    border:
+        1px dashed rgba(108, 99, 255, 0.20);
+}
+
+.empty-peer > span {
+    display: block;
+
+    font-size: 34px;
+
+    margin-bottom: 12px;
+}
+
+.empty-peer h3 {
+    font-size: 17px;
+
+    margin-bottom: 8px;
+}
+
+.empty-peer p {
+    color: #7f879f;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   PEER CARDS
+   ===================================================== */
+
+.peer-card {
+    padding: 20px;
+
+    margin-top: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+
+    border-radius: 16px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    transition: 0.3s;
+}
+
+.peer-card:hover {
+    border-color:
+        rgba(108, 99, 255, 0.25);
+}
+
+.peer-avatar {
+    width: 47px;
+    height: 47px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff5796,
+            #6c63ff
+        );
+
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.peer-card h3 {
+    font-size: 13px;
+
+    margin-bottom: 4px;
+}
+
+.peer-card p {
+    color: #7f879f;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   DISCUSSION
+   ===================================================== */
+
+.discussion-container {
+    margin-top: 25px;
+
+    min-height: 220px;
+
+    padding: 25px;
+
+    border-radius: 17px;
+
+    background:
+        rgba(5, 8, 18, 0.35);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.05);
+}
+
+.discussion-empty {
+    height: 170px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    text-align: center;
+}
+
+.chat-symbol {
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+.discussion-empty h3 {
+    font-size: 16px;
+
+    margin-bottom: 6px;
+}
+
+.discussion-empty p {
+    color: #7f879f;
+
+    font-size: 11px;
+}
+
+.discussion-label {
+    color: #7f879f;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 14px;
+}
+
+.comment-item {
+    padding: 14px 16px;
+
+    margin-bottom: 10px;
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.comment-item strong {
+    display: block;
+
+    font-size: 12px;
+
+    color: #ff86b0;
+
+    margin-bottom: 4px;
+}
+
+.comment-item p {
+    color: #c7cbe0;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   COMMENT BOX
+   ===================================================== */
+
+.comment-box {
+    margin-top: 15px;
+
+    display: flex;
+
+    gap: 12px;
+}
+
+.comment-box textarea {
+    flex: 1;
+
+    min-height: 70px;
+
+    resize: vertical;
+
+    padding: 15px;
+
+    border-radius: 13px;
+
+    outline: none;
+
+    color: white;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    transition: 0.3s;
+}
+
+.comment-box textarea:focus {
+    border-color:
+        rgba(255, 87, 150, 0.35);
+
+    box-shadow:
+        0 0 20px
+        rgba(255, 87, 150, 0.06);
+}
+
+.comment-box textarea::placeholder {
+    color: #656d87;
+}
+
+#sendComment {
+    align-self: flex-end;
+
+    padding: 12px 18px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff5796,
+            #8b5cff
+        );
+
+    cursor: pointer;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+#sendComment:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(255, 87, 150, 0.22);
+}
+
+
+/* =====================================================
+   HELPING HAND
+   ===================================================== */
+
+.helping-hand {
+    margin-top: 27px;
+
+    padding: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    text-align: left;
+
+    border-radius: 24px;
+
+    background:
+        radial-gradient(
+            circle at 70% 50%,
+            rgba(108, 99, 255, 0.14),
+            transparent 50%
+        ),
+        rgba(255, 255, 255, 0.025);
+
+    border:
+        1px solid rgba(108, 99, 255, 0.14);
+}
+
+.help-icon {
+    width: 70px;
+    height: 70px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 22px;
+
+    font-size: 25px;
+
+    color: #aaa5ff;
+
+    background:
+        rgba(108, 99, 255, 0.08);
+
+    border:
+        1px solid rgba(108, 99, 255, 0.18);
+}
+
+.helping-hand p:first-child {
+    color: #777dff;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+.helping-hand h2 {
+    max-width: 700px;
+
+    font-size: 24px;
+
+    line-height: 1.35;
+
+    margin-bottom: 9px;
+}
+
+.helping-hand p:last-child {
+    color: #7f879f;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   PRIVACY
+   ===================================================== */
+
+.privacy-note {
+    margin-top: 20px;
+
+    padding: 20px 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    border-radius: 16px;
+
+    background:
+        rgba(0, 212, 255, 0.035);
+
+    border:
+        1px solid rgba(0, 212, 255, 0.10);
+}
+
+.privacy-note > span {
+    font-size: 20px;
+}
+
+.privacy-note h3 {
+    font-size: 12px;
+
+    margin-bottom: 5px;
+}
+
+.privacy-note p {
+    color: #737b95;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+    padding: 35px;
+
+    text-align: center;
+
+    background:
+        rgba(5, 8, 18, 0.85);
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    color: #707791;
+
+    font-size: 12px;
+}
+
+footer p:first-child {
+    color: #a1a7c0;
+
+    margin-bottom: 6px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 950px) {
+
+    .stuck-status {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .stuck-hero h2 {
+        font-size: 39px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 18px;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    main {
+        width: 94%;
+
+        margin-top: 35px;
+    }
+
+    .stuck-hero {
+        padding: 35px 25px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .stuck-hero h2 {
+        font-size: 34px;
+    }
+
+    .stuck-status {
+        grid-template-columns: 1fr;
+    }
+
+    .assignment-selector,
+    .peer-activity,
+    .discussion-section {
+        padding: 22px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .stuck-action {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .action-content {
+        width: 100%;
+    }
+
+    .comment-box {
+        flex-direction: column;
+    }
+
+    #sendComment {
+        align-self: flex-start;
+    }
+
+    .helping-hand {
+        padding: 28px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    .stuck-hero h2 {
+        font-size: 29px;
+    }
+
+    .hero-symbol {
+        width: 80px;
+        height: 80px;
+
+        font-size: 35px;
+    }
+
+    .status-box {
+        padding: 18px;
+    }
+
+    .helping-hand h2 {
+        font-size: 20px;
+    }
+}

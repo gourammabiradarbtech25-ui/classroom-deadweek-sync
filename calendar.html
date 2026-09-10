@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calendar | Classroom Deadweek Sync</title>
+
+    <link rel="stylesheet" href="calendar.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================================
+         HEADER
+         ================================================= -->
+
+    <header>
+
+        <div class="logo">
+
+            <h1>Classroom Deadweek Sync</h1>
+
+        </div>
+
+
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+
+            <a href="calendar.html">Calendar</a>
+
+            <a href="deadweek.html">Deadweek</a>
+
+            <a href="workload.html">Workload</a>
+
+            <a href="stuck.html">I'm Stuck</a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =================================================
+         MAIN
+         ================================================= -->
+
+    <main>
+
+
+        <!-- =================================================
+             CALENDAR INTRODUCTION
+             ================================================= -->
+
+        <section class="calendar-heading">
+
+            <p>YOUR ACADEMIC SCHEDULE</p>
+
+            <h2>Deadline Calendar</h2>
+
+            <p>
+                View your courses, assignments and deadlines
+                from Google Classroom in one place.
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CALENDAR NAVIGATION
+             ================================================= -->
+
+        <section class="calendar-controls">
+
+
+            <button
+                type="button"
+                id="previousYear">
+
+                «
+
+            </button>
+
+
+            <button
+                type="button"
+                id="previousMonth">
+
+                ←
+
+            </button>
+
+
+            <div class="calendar-title">
+
+                <h2 id="currentMonth">
+                    August
+                </h2>
+
+                <p id="currentYear">
+                    2026
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="nextMonth">
+
+                →
+
+            </button>
+
+
+            <button
+                type="button"
+                id="nextYear">
+
+                »
+
+            </button>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             TODAY BUTTON
+             ================================================= -->
+
+        <div class="today-button-container">
+
+            <button
+                type="button"
+                id="todayButton">
+
+                Today
+
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CALENDAR
+             ================================================= -->
+
+        <section class="calendar-container">
+
+
+            <!-- WEEK DAYS -->
+
+            <div class="calendar-days">
+
+                <div>MON</div>
+
+                <div>TUE</div>
+
+                <div>WED</div>
+
+                <div>THU</div>
+
+                <div>FRI</div>
+
+                <div>SAT</div>
+
+                <div>SUN</div>
+
+            </div>
+
+
+
+            <!-- DATES -->
+
+            <div
+                class="calendar-grid"
+                id="calendarGrid">
+
+                <!--
+
+                    JavaScript will automatically
+                    generate all dates here.
+
+                -->
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             CALENDAR LEGEND
+             ================================================= -->
+
+        <section class="calendar-legend">
+
+
+            <h2>Deadline Types</h2>
+
+
+            <div class="legend-items">
+
+
+                <div class="legend-item">
+
+                    <span
+                        class="legend-dot assignment-dot">
+                    </span>
+
+                    <p>
+                        Assignment
+                    </p>
+
+                </div>
+
+
+
+                <div class="legend-item">
+
+                    <span
+                        class="legend-dot exam-dot">
+                    </span>
+
+                    <p>
+                        Exam / Midterm
+                    </p>
+
+                </div>
+
+
+
+                <div class="legend-item">
+
+                    <span
+                        class="legend-dot project-dot">
+                    </span>
+
+                    <p>
+                        Project
+                    </p>
+
+                </div>
+
+
+
+                <div class="legend-item">
+
+                    <span
+                        class="legend-dot deadweek-dot">
+                    </span>
+
+                    <p>
+                        Deadweek
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             UPCOMING DEADLINES
+             ================================================= -->
+
+        <section class="upcoming-deadlines">
+
+
+            <div class="section-title">
+
+
+                <div>
+
+                    <p>COMING UP</p>
+
+                    <h2>
+                        Upcoming Deadlines
+                    </h2>
+
+                </div>
+
+
+                <span id="deadlineCount">
+                    0 deadlines
+                </span>
+
+
+            </div>
+
+
+
+            <div id="upcomingDeadlineList">
+
+                <p>
+                    No upcoming deadlines.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             DEADWEEK DETECTOR
+             ================================================= -->
+
+        <section class="deadweek-alert">
+
+
+            <div>
+
+                <p>
+                    WORKLOAD CHECK
+                </p>
+
+
+                <h2>
+                    Deadweek Detector
+                </h2>
+
+
+                <p id="deadweekStatus">
+
+                    Your calendar will be checked for
+                    weeks containing too many deadlines.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="deadweek-action">
+
+
+                <button
+                    type="button"
+                    id="checkDeadweek">
+
+                    Check My Workload
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             SELECTED DATE
+             ================================================= -->
+
+        <section class="selected-day">
+
+
+            <p>
+                SELECTED DATE
+            </p>
+
+
+            <h2 id="selectedDate">
+
+                Select a date
+
+            </h2>
+
+
+            <div id="selectedDayAssignments">
+
+
+                <p>
+
+                    Click any date to see
+                    assignments and deadlines.
+
+                </p>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =================================================
+         FOOTER
+         ================================================= -->
+
+    <footer>
+
+
+        <p>
+            &copy; 2026 Classroom Deadweek Sync
+        </p>
+
+
+        <p>
+            Your deadlines. One place. No surprises.
+        </p>
+
+
+    </footer>
+
+
+
+    <!-- =================================================
+         JAVASCRIPT
+         ================================================= -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

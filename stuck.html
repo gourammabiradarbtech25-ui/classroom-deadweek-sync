@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Stuck | Classroom Deadweek Sync</title>
+    <link rel="stylesheet" href="stuck.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Classroom Deadweek Sync</h1>
+        </div>
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="calendar.html">Calendar</a>
+            <a href="deadweek.html">Deadweek</a>
+            <a href="workload.html">Workload</a>
+            <a href="stuck.html">I'm Stuck</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="stuck-hero">
+            <div class="hero-symbol">?</div>
+            <div>
+                <p>PEER SUPPORT SPACE</p>
+                <h2>Stuck on something?</h2>
+                <p>You might not be the only one. Find classmates facing the same assignment and figure it out together.</p>
+            </div>
+        </section>
+
+        <section class="stuck-status">
+            <div class="status-box">
+                <span>📚</span>
+                <div>
+                    <strong id="totalAssignments">0</strong>
+                    <p>Assignments</p>
+                </div>
+            </div>
+            <div class="status-box">
+                <span>🙋</span>
+                <div>
+                    <strong id="studentsStuck">0</strong>
+                    <p>Students Stuck</p>
+                </div>
+            </div>
+            <div class="status-box">
+                <span>💬</span>
+                <div>
+                    <strong id="activeDiscussions">0</strong>
+                    <p>Active Discussions</p>
+                </div>
+            </div>
+            <div class="status-box">
+                <span>🤝</span>
+                <div>
+                    <strong id="helpedStudents">0</strong>
+                    <p>Students Helped</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="assignment-selector">
+            <div class="section-heading">
+                <div>
+                    <p>FROM YOUR CLASSROOM</p>
+                    <h2>What are you stuck on?</h2>
+                </div>
+                <span>Waiting for Classroom data</span>
+            </div>
+
+            <!-- FIXED ID: stuckAssignmentList -->
+            <div class="assignment-list" id="stuckAssignmentList">
+                <div class="empty-assignment">
+                    <div>◌</div>
+                    <h3>Your assignments will appear here</h3>
+                    <p>Connect Google Classroom to see your assignments and tell your classmates where you need help.</p>
+                    <a href="index.html">Connect Google Classroom →</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="peer-activity">
+            <div class="section-heading">
+                <div>
+                    <p>LIVE PEER ACTIVITY</p>
+                    <h2>You're Not Alone</h2>
+                </div>
+                <span>Live</span>
+            </div>
+            <div class="peer-list" id="peerList">
+                <div class="empty-peer">
+                    <span>👥</span>
+                    <h3>No peer activity yet</h3>
+                    <p>When students mark an assignment as "I'm Stuck", their activity will appear here.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="discussion-section">
+            <div class="section-heading">
+                <div>
+                    <p>PEER DISCUSSION</p>
+                    <h2>Ask. Share. Solve.</h2>
+                </div>
+            </div>
+            <div class="discussion-container" id="discussionContainer">
+                <div class="discussion-empty">
+                    <div class="chat-symbol">💬</div>
+                    <h3>No discussions yet</h3>
+                    <p>Start by marking an assignment as "I'm Stuck".</p>
+                </div>
+            </div>
+            <div class="comment-box">
+                <textarea id="commentText" placeholder="Share your question or help a classmate..."></textarea>
+                <button type="button" id="sendComment">Post Comment →</button>
+            </div>
+        </section>
+
+        <section class="helping-hand">
+            <div class="help-icon">✦</div>
+            <div>
+                <p>COMMUNITY IDEA</p>
+                <h2>One student's question could be another student's answer.</h2>
+                <p>Help your classmates when you know the solution. Everyone moves forward together.</p>
+            </div>
+        </section>
+
+        <section class="privacy-note">
+            <span>🔒</span>
+            <div>
+                <h3>Your privacy matters</h3>
+                <p>Only the information needed for peer collaboration will be shown.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Classroom Deadweek Sync</p>
+        <p>Learn together. Solve together. Stress less.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

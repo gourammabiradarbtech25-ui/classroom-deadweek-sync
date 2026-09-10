@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - Classroom Deadweek Sync</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Classroom Deadweek Sync</h1>
+
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="calendar.html">Calendar</a>
+            <a href="deadweek.html">Deadweek</a>
+            <a href="workload.html">Workload</a>
+            <a href="stuck.html">I'm Stuck</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <h2>Welcome, Student!</h2>
+
+        <p>
+            Here is your Google Classroom assignment overview.
+        </p>
+
+
+        <!-- Overview -->
+
+        <section>
+
+            <h2>Overview</h2>
+
+            <div>
+                <h3 id="courseCount">0</h3>
+                <p>Courses</p>
+            </div>
+
+            <div>
+                <h3 id="assignmentCount">0</h3>
+                <p>Pending Assignments</p>
+            </div>
+
+            <div>
+                <h3 id="deadlineCount">0</h3>
+                <p>Upcoming Deadlines</p>
+            </div>
+
+            <div>
+                <h3 id="deadweekCount">0</h3>
+                <p>Deadweek Alerts</p>
+            </div>
+
+        </section>
+
+
+        <!-- Google Classroom Courses -->
+
+        <section>
+
+            <h2>My Google Classroom Courses</h2>
+
+            <div id="courseList">
+
+                <p>
+                    Your Google Classroom courses will appear here.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Upcoming Assignments -->
+
+        <section>
+
+            <h2>Upcoming Assignments</h2>
+
+            <div id="assignmentList">
+
+                <p>
+                    Your Google Classroom assignments will appear here.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Deadweek Alert -->
+
+        <section>
+
+            <h2>Deadweek Alert</h2>
+
+            <div id="deadweekMessage">
+
+                <p>
+                    Your workload analysis will appear here.
+                </p>
+
+            </div>
+
+            <a href="deadweek.html">
+                View Deadweek Details
+            </a>
+
+        </section>
+
+
+        <!-- Smart Workload Plan -->
+
+        <section>
+
+            <h2>This Week's Plan</h2>
+
+            <div id="workloadPlan">
+
+                <p>
+                    Your personalized workload plan will appear here.
+                </p>
+
+            </div>
+
+            <a href="workload.html">
+                View Full Workload Plan
+            </a>
+
+        </section>
+
+
+        <!-- Peer Support -->
+
+        <section>
+
+            <h2>Peer Support</h2>
+
+            <p>
+                Are you stuck on an assignment?
+            </p>
+
+            <div id="peerStatus">
+
+                <p>
+                    Select an assignment to see how many classmates
+                    are facing the same problem.
+                </p>
+
+            </div>
+
+            <a href="stuck.html">
+                I'm Stuck
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            &copy; 2026 Classroom Deadweek Sync
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

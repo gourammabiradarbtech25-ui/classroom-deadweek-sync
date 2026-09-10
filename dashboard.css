@@ -1,0 +1,830 @@
+/* =====================================================
+   CLASSROOM DEADWEEK SYNC
+   FUTURISTIC DASHBOARD
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(108, 99, 255, 0.18),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(0, 212, 255, 0.10),
+            transparent 30%
+        ),
+
+        #0b1020;
+
+    color: #f5f7ff;
+
+    min-height: 100vh;
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+header {
+    padding: 20px 6%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: rgba(11, 16, 32, 0.92);
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(15px);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+}
+
+
+/* Logo */
+
+header h1 {
+    font-size: 21px;
+
+    letter-spacing: 0.5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #9fa5ff,
+            #00d4ff
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =====================================================
+   NAVIGATION
+   ===================================================== */
+
+nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+nav a {
+    color: #aeb4cc;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    padding: 9px 13px;
+
+    border-radius: 9px;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: white;
+
+    background:
+        rgba(108, 99, 255, 0.15);
+}
+
+nav a[href="dashboard.html"] {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c63ff,
+            #5148c9
+        );
+
+    box-shadow:
+        0 5px 20px
+        rgba(108, 99, 255, 0.25);
+}
+
+
+/* =====================================================
+   MAIN
+   ===================================================== */
+
+main {
+    width: 88%;
+
+    max-width: 1250px;
+
+    margin: 45px auto 80px;
+}
+
+
+/* =====================================================
+   WELCOME
+   ===================================================== */
+
+main > h2 {
+    font-size: 40px;
+
+    line-height: 1.1;
+
+    margin-bottom: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #a9b0ff,
+            #00d4ff
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+main > p {
+    color: #9fa6c1;
+
+    font-size: 15px;
+
+    margin-bottom: 40px;
+}
+
+
+/* =====================================================
+   OVERVIEW
+   ===================================================== */
+
+section:first-of-type {
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+
+    padding: 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 35px;
+}
+
+section:first-of-type > h2 {
+    grid-column: 1 / -1;
+
+    color: #cbd0e5;
+
+    font-size: 17px;
+
+    margin-bottom: 3px;
+}
+
+
+/* =====================================================
+   STAT CARDS
+   ===================================================== */
+
+section:first-of-type > div {
+    min-height: 145px;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.10);
+
+    backdrop-filter: blur(15px);
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+section:first-of-type > div:hover {
+    transform: translateY(-7px);
+
+    border-color:
+        rgba(108, 99, 255, 0.55);
+
+    box-shadow:
+        0 15px 40px
+        rgba(108, 99, 255, 0.16);
+}
+
+
+/* Glow circles */
+
+section:first-of-type > div::after {
+    content: "";
+
+    position: absolute;
+
+    width: 90px;
+
+    height: 90px;
+
+    border-radius: 50%;
+
+    right: -35px;
+
+    bottom: -35px;
+
+    filter: blur(3px);
+
+    opacity: 0.35;
+}
+
+section:first-of-type > div:nth-of-type(1)::after {
+    background: #6c63ff;
+}
+
+section:first-of-type > div:nth-of-type(2)::after {
+    background: #00d4ff;
+}
+
+section:first-of-type > div:nth-of-type(3)::after {
+    background: #ffb84d;
+}
+
+section:first-of-type > div:nth-of-type(4)::after {
+    background: #ff5d69;
+}
+
+
+/* Numbers */
+
+section:first-of-type div h3 {
+    font-size: 40px;
+
+    margin-bottom: 5px;
+
+    color: white;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+section:first-of-type div p {
+    color: #9299b4;
+
+    font-size: 13px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   GENERAL SECTIONS
+   ===================================================== */
+
+section:not(:first-of-type) {
+    padding: 30px;
+
+    margin-bottom: 25px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.055),
+            rgba(255, 255, 255, 0.018)
+        );
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 10px 35px
+        rgba(0, 0, 0, 0.18);
+}
+
+section:not(:first-of-type) > h2 {
+    font-size: 21px;
+
+    color: #f2f4ff;
+
+    margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   COURSES
+   ===================================================== */
+
+#courseList {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(210px, 1fr));
+
+    gap: 15px;
+}
+
+#courseList p {
+    color: #858ca7;
+
+    font-size: 14px;
+}
+
+
+/* Future course cards */
+
+#courseList > div {
+    padding: 20px;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(108, 99, 255, 0.15),
+            rgba(255, 255, 255, 0.03)
+        );
+
+    border:
+        1px solid
+        rgba(108, 99, 255, 0.20);
+
+    transition: 0.3s;
+}
+
+#courseList > div:hover {
+    transform: translateY(-5px);
+
+    border-color: #6c63ff;
+
+    box-shadow:
+        0 10px 30px
+        rgba(108, 99, 255, 0.15);
+}
+
+
+/* =====================================================
+   ASSIGNMENTS
+   ===================================================== */
+
+#assignmentList {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(270px, 1fr));
+
+    gap: 15px;
+}
+
+#assignmentList p {
+    color: #858ca7;
+
+    font-size: 14px;
+}
+
+
+/* Assignment cards */
+
+#assignmentList > div {
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    transition: 0.3s;
+}
+
+#assignmentList > div:hover {
+    transform: translateY(-4px);
+
+    border-color:
+        rgba(0, 212, 255, 0.5);
+}
+
+
+/* =====================================================
+   DEADLINES
+   ===================================================== */
+
+#deadlineList {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+#deadlineList p {
+    color: #858ca7;
+
+    font-size: 14px;
+}
+
+
+/* Future deadline items */
+
+#deadlineList > div {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 17px 20px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(255, 184, 77, 0.06);
+
+    border-left:
+        4px solid #ffb84d;
+}
+
+
+/* =====================================================
+   DEADWEEK
+   ===================================================== */
+
+section:has(#deadweekMessage) {
+    background:
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(255, 80, 90, 0.18),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            145deg,
+            rgba(255, 80, 90, 0.07),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    border-color:
+        rgba(255, 80, 90, 0.25);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+section:has(#deadweekMessage)::after {
+    content: "⚠";
+
+    position: absolute;
+
+    right: 35px;
+
+    top: 15px;
+
+    font-size: 90px;
+
+    color: #ff5964;
+
+    opacity: 0.08;
+}
+
+section:has(#deadweekMessage) h2 {
+    color: #ff737b;
+}
+
+#deadweekMessage {
+    padding: 20px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(255, 80, 90, 0.06);
+
+    border-left:
+        4px solid #ff5964;
+
+    margin-bottom: 20px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+#deadweekMessage p {
+    color: #b2b6ca;
+
+    font-size: 14px;
+}
+
+section:has(#deadweekMessage) a {
+    display: inline-block;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff5964,
+            #d83d49
+        );
+
+    padding: 11px 20px;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+section:has(#deadweekMessage) a:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(255, 89, 100, 0.25);
+}
+
+
+/* =====================================================
+   SMART WORKLOAD
+   ===================================================== */
+
+section:has(#workloadPlan) {
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(108, 99, 255, 0.15),
+            transparent 35%
+        );
+}
+
+#workloadPlan {
+    padding: 22px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(108, 99, 255, 0.06);
+
+    border-left:
+        4px solid #6c63ff;
+
+    margin-bottom: 20px;
+
+    color: #aeb4cc;
+
+    font-size: 14px;
+}
+
+
+/* Workload progress */
+
+#workloadPlan::after {
+    content: "";
+
+    display: block;
+
+    height: 7px;
+
+    width: 65%;
+
+    margin-top: 18px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #6c63ff,
+            #00d4ff
+        );
+
+    box-shadow:
+        0 0 15px
+        rgba(108, 99, 255, 0.35);
+}
+
+section:has(#workloadPlan) a {
+    color: #8f88ff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   PEER SUPPORT
+   ===================================================== */
+
+section:has(#peerStatus) {
+    background:
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(50, 220, 145, 0.12),
+            transparent 30%
+        );
+}
+
+section:has(#peerStatus) h2 {
+    color: #65e6a2;
+}
+
+#peerStatus {
+    padding: 20px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(50, 220, 145, 0.05);
+
+    border-left:
+        4px solid #42d68d;
+
+    margin: 15px 0 20px;
+
+    color: #aeb4cc;
+
+    font-size: 14px;
+}
+
+section:has(#peerStatus) a {
+    display: inline-block;
+
+    background:
+        linear-gradient(
+            135deg,
+            #42d68d,
+            #1cae69
+        );
+
+    color: white;
+
+    padding: 11px 20px;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+section:has(#peerStatus) a:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(66, 214, 141, 0.2);
+}
+
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+    padding: 35px;
+
+    text-align: center;
+
+    background:
+        rgba(5, 8, 18, 0.8);
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
+    color: #777f9a;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 1000px) {
+
+    section:first-of-type {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    nav {
+        gap: 2px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    header {
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 18px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 11px;
+
+        padding: 7px 9px;
+    }
+
+    main {
+        width: 94%;
+
+        margin-top: 30px;
+    }
+
+    main > h2 {
+        font-size: 30px;
+    }
+
+    section:first-of-type {
+        grid-template-columns: 1fr;
+    }
+
+    section:not(:first-of-type) {
+        padding: 22px;
+    }
+
+    #courseList,
+    #assignmentList {
+        grid-template-columns: 1fr;
+    }
+}
